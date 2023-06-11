@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "196554006393",
+    "project_id": "appguitarhub",
+    "storage_bucket": "appguitarhub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196554006393:android:3b852e8d49e16b628299a8",
+        "android_client_info": {
+          "package_name": "com.example.appguitarhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196554006393-a9rph51uuoe89g8qoch4e1v254t2qu96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7G9etxUsGqD8GcqTMr5EJWFB-eqIH_4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196554006393-a9rph51uuoe89g8qoch4e1v254t2qu96.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
