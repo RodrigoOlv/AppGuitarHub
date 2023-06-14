@@ -1,12 +1,15 @@
 package com.example.appguitarhub;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -15,9 +18,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appguitarhub.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -54,6 +59,27 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if( item.getItemId()== R.id.action_settings ) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Sobre");
+            builder.setMessage("Rodrigo Leite de Oliveira\n\nTrabalho Final da disciplina de PW3, SSI, IFRS, Campus POA\nAplicação android usando fragmentos com autenticação e persistência no Firebase");
+            builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    // não faz nada, apenas fecha o dialog
+                }
+            });
+            builder.create().show();
+        }
+        if(item.getItemId()== R.id.action_logout){
+            FirebaseAuth.getInstance().signOut();
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
