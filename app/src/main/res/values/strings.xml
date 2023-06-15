@@ -29,4 +29,8 @@
     <string name="type">Interesse em</string>
     <string name="contact">Contato</string>
     <string name="btn_register">Cadastrar</string>
+    <string name="btn_delete">Deletar</string>
+    <string name="btn_edit">Editar</string>
+    <string name="menu_listing">Listar</string>
+    <string name="btn_contact">Entrar em contato</string>
 </resources>

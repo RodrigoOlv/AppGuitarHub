@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,6 +57,7 @@ public class RegisterFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
+                        Navigation.findNavController(view).navigate(R.id.action_nav_register_to_nav_listing);
                         Snackbar.make(view, "Equipamento cadastrado", Snackbar.LENGTH_LONG).show();
                     }
                 })
