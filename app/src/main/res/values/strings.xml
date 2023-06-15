@@ -23,4 +23,10 @@
     <string name="register_user_cancel">Cancelar</string>
     <string name="register_user_submit">Cadastrar</string>
     <string name="action_logout">Sair</string>
+    <string name="menu_register">Cadastrar</string>
+    <string name="name">Nome</string>
+    <string name="description">Descrição</string>
+    <string name="type">Interesse em</string>
+    <string name="contact">Contato</string>
+    <string name="btn_register">Cadastrar</string>
 </resources>
