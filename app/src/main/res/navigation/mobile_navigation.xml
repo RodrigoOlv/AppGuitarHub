@@ -25,6 +25,20 @@
         android:id="@+id/nav_listing"
         android:name="com.example.appguitarhub.ui.listing.ListingFragment"
         android:label="@string/menu_listing"
-        tools:layout="@layout/fragment_listing" />
+        tools:layout="@layout/fragment_listing">
+        <action
+            android:id="@+id/action_nav_list_to_nav_edit"
+            app:destination="@id/nav_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_edit"
+        android:name="com.example.appguitarhub.ui.edit.EditFragment"
+        android:label="@string/menu_edit"
+        tools:layout="@layout/fragment_edit" >
+        <action
+            android:id="@+id/action_nav_edit_to_nav_listing"
+            app:destination="@id/nav_listing" />
+    </fragment>
 
 </navigation>

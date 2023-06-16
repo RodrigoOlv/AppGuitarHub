@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appguitarhub.R;
@@ -61,6 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         bundle.putString("CONTACT", listEquipments.get(position).getContact());
         bundle.putString("KEY", listEquipments.get(position).getId());
 
+        myViewHolder.btnEdit.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_edit, bundle));
     }
 
     @Override
