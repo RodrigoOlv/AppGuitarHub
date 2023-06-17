@@ -27,25 +27,29 @@
                 android:layout_height="wrap_content"
                 android:text="@string/name"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textViewDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/description" />
+                android:text="@string/description"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textViewType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/type" />
+                android:text="@string/type"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textViewContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/contact" />
+                android:text="@string/contact"
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
