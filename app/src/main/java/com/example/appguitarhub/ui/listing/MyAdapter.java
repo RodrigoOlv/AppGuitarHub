@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,6 +65,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         bundle.putString("KEY", listEquipments.get(position).getId());
 
         myViewHolder.btnEdit.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_edit, bundle));
+
+        myViewHolder.btnContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleContact(listEquipments.get(position).getContact(), listEquipments.get(position).getName());
+            }
+        });
     }
 
     @Override
@@ -86,6 +95,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             .setNegativeButton("Não", null).show();
     }
 
+    public void handleContact(String contact, String name) {
+        String url = "https://api.whatsapp.com/send?phone=55" + contact + "&text=Olá, estou interessado em seu anúncio " + name + ", vamos conversar?";
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        context.startActivity(intent);
+    }
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         TextView description;
@@ -93,6 +110,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         TextView contact;
         ImageButton btnDelete;
         ImageButton btnEdit;
+        ImageButton btnContact;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -103,6 +121,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             contact = itemView.findViewById(R.id.textViewContact);
             btnDelete = itemView.findViewById(R.id.btnDelete);
             btnEdit = itemView.findViewById(R.id.btnEdit);
+            btnContact = itemView.findViewById(R.id.btnContact);
         }
     }
 }
